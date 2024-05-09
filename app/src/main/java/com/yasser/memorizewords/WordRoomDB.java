@@ -9,6 +9,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.yasser.memorizewords.data.dao.CategoryDAO;
+import com.yasser.memorizewords.data.dao.WordDAO;
+import com.yasser.memorizewords.data.model.Category;
+import com.yasser.memorizewords.data.model.Word;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,11 +26,11 @@ public abstract class WordRoomDB extends RoomDatabase {
 
     private static volatile WordRoomDB INSTANCE;
   private static final int THREADS_NO = 4;
-   static final ExecutorService dbWriteExecutor =
+   public static final ExecutorService dbWriteExecutor =
    Executors.newFixedThreadPool(THREADS_NO);
 
     //Sington approach
-    static WordRoomDB getDatabase(final Context context) {
+    public static WordRoomDB getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (WordRoomDB.class) {
                 if (INSTANCE == null) {

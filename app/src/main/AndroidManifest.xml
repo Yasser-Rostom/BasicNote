@@ -18,24 +18,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicNote">
-        <activity android:name="com.yasser.memorizewords.About"></activity>
+        <activity android:name="com.yasser.memorizewords.ui.activities.About"></activity>
         <activity
-            android:name="com.yasser.memorizewords.WordListing"
-            android:parentActivityName="com.yasser.memorizewords.CategoryListing">
+            android:name="com.yasser.memorizewords.ui.activities.WordListingActivity"
+            android:parentActivityName="com.yasser.memorizewords.ui.activities.CategoryListingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yasser.memorizewords.CategoryListing" />
+                android:value="com.yasser.memorizewords.ui.activities.CategoryListingActivity" />
         </activity>
         <activity
-            android:name="com.yasser.memorizewords.NewWordActivity"
-            android:parentActivityName="com.yasser.memorizewords.WordListing">
+            android:name="com.yasser.memorizewords.ui.activities.NewWordActivity"
+            android:parentActivityName="com.yasser.memorizewords.ui.activities.WordListingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yasser.memorizewords.WordListing" />
+                android:value="com.yasser.memorizewords.ui.activities.WordListingActivity" />
         </activity>
         <activity
-            android:name="com.yasser.memorizewords.Splash"
-            android:theme="@style/SplashScreen">
+            android:name="com.yasser.memorizewords.ui.activities.SplashActivity"
+            android:theme="@style/SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.yasser.memorizewords.CategoryListing"
+            android:name="com.yasser.memorizewords.ui.activities.CategoryListingActivity"
             android:theme="@style/Theme.BasicNote" />
     </application>
 
